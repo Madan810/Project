@@ -58,26 +58,13 @@
         <ul>
           <li><a class="nav-link scrollto " href="/">Home</a></li>
 
-          <li><a class="nav-link scrollto" href="/pdetails">Patients Details</a></li>
-          <li><a class="nav-link scrollto" href="/slotbooking">Available Beds</a></li>
-          <li><a class="nav-link scrollto" href="/trigers">Operations</a></li>
+          <li><a class="nav-link scrollto" href="#departments">Patients Details</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">Available Beds</a></li>
 
-{% if current_user.is_authenticated  and current_user.hcode %}
+{% if current_user.is_authenticated %}
 
           <li class="dropdown"><a href="/login"><span>Welcome {{current_user.email}}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-
-              <li><a href="/addhospitalinfo">Add Hospital Data</a></li>
-              <li><a href="/logout">Logout</a></li>
-      
-           
-            </ul>
-          </li>
-{% elif current_user.is_authenticated and current_user.srfid %}
-           <li class="dropdown"><a href="/login"><span>Welcome {{current_user.email}}</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-
-              <li><a href="/slotbooking">Book Slot</a></li>
               <li><a href="/logout">Logout</a></li>
       
            
@@ -94,7 +81,7 @@
           </li>
 
 {% endif %}
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -112,24 +99,19 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(static/assets/img/slide/slide-1.jpg)">
-          <div class="container">
-            <h2>Welcome to <span>Covid center</span></h2>
-            <p>Banglore bed booking system <p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
+     
+        <div class="carousel-item active" style="background-image: url(static/assets/img/bgc.jpg)">
+          
+          <div class="container bg-light">
+       
+{% block form %}
+
+{% endblock form %}
+
           </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(static/assets/img/slide/slide-2.jpg)">
-          <div class="container">
-            <h2>India</h2>
-            <p>Banglore bed booking system</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
-
+        
        
 
       </div>
@@ -147,24 +129,8 @@
 
   <main id="main">
 
-  {% block body %}
-  
-  
-  {% endblock body %}
 
 
-
-<footer>
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Arkprocoder</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-       
-        Designed by <a href="https://arprocoder.tech/">arkprocoder</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
